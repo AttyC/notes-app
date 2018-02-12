@@ -1,8 +1,8 @@
 (function(exports){
 
-  function Note(){
-    this.text = 'My favourite language is JavaScript';
+  function NoteModel(text){
+    this.text = text;
   };
-  exports.Note = Note;
+  exports.NoteModel = NoteModel;
 
 })(this);

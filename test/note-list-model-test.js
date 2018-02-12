@@ -28,4 +28,18 @@
   }
   testNoteListModelReturnsAllNoteModelsInArray();
 
+  // Has a method that creates and stores a new single note model.
+
+  // This function takes as an argument a string that will be the value of the
+  // text property of the note e.g. "Favourite drink: seltzer".
+
+  function testNoteListModelStoresSingleNoteModel(){
+
+    var noteListModel = new NoteListModel();
+    noteListModel.createNote('Favourite drink: seltzer')
+
+    assert.isTrue(noteListModel.notes[0].text === 'Favourite drink: seltzer');
+  }
+  testNoteListModelStoresSingleNoteModel();
+
 })(this)
