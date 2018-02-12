@@ -6,7 +6,7 @@
 // Handles a note list model that has no notes, one note or several notes.
 
 (function(exports){
-
+  
   function testNoteListViewHasNoteListModel(){
     var model = new NoteListModel();
     var noteListView = new NoteListView(model);
@@ -20,7 +20,7 @@
   }
   testNoteListViewHasNoteListModel();
 
-  function testNoteListViewReturnsHtmlString(){
+  function testNoteListViewReturnsHtmlStringWithMultipleNotes(){
     var model = new NoteListModel();
     var noteListView = new NoteListView(model);
     noteListView.model.createNote('This is an HTML test');
@@ -30,5 +30,27 @@
 
     assert.isTrue(noteListView.noteList === ('<ul><li>This is an HTML test</li><li>Blah test</li><li>Sweet test</li></ul>'));
   }
-  testNoteListViewHasNoteListModel();
+  testNoteListViewReturnsHtmlStringWithMultipleNotes();
+
+  function testNoteListViewWithZeroNotesDoesNotReturnsHtmlString(){
+    var model = new NoteListModel();
+    var noteListView = new NoteListView(model);
+
+    noteListView.createHTML(model);
+    assert.isTrue(noteListView.noteList.length === 0);
+
+  }
+  testNoteListViewWithZeroNotesDoesNotReturnsHtmlString();
+
+  function testNoteListViewReturnsHtmlStringWithOneNote(){
+    var model = new NoteListModel();
+    var noteListView = new NoteListView(model);
+    noteListView.model.createNote('This is an HTML test');
+    noteListView.createHTML(model);
+
+    assert.isTrue(noteListView.noteList === ('<ul><li>This is an HTML test</li></ul>'));
+
+  }
+  testNoteListViewReturnsHtmlStringWithOneNote();
+
 })(this)
