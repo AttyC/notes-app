@@ -1,5 +1,4 @@
 (function(exports){
-
   // Stores an array of note models.
   function testNoteControllerHasNoteList(){
 

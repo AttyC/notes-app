@@ -5,7 +5,7 @@
   }
 
   NoteController.prototype.insertHtml = function() {
-    document.getElementById('app').innerHTML = this.noteList.createHTML();
+    document.getElementById('app').innerHTML = this.noteView.createHTML();
   };
 
   exports.NoteController = NoteController;
