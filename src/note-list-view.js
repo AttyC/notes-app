@@ -1,27 +1,25 @@
 (function(exports){
 
-  function NoteListView(model){
-    this.model = model;
-    this.noteList = [];
+  function NoteListView(noteList){
+    this.noteList = noteList;
   };
 
-  NoteListView.prototype.createHTML = function (model) {
+  NoteListView.prototype.createHTML = function () {
 
-    if( model.notes.length > 0 ) {
-      var htmlString = '<ul><li>';
-      var htmlEnd = '</li></ul>';
-      var notes = model.notes;
+    var htmlString = '';
 
-      var notesArray = notes.map(function(note){
-        return note.text;
+    if( this.noteList.notes.length > 0 ) {
+      htmlString = '<ul>';
+
+      this.noteList.notes.map(function(note){
+        htmlString += '<li>' + note.text + '</li>';
       });
+      htmlString += '</ul>';
 
-      notesArray = notesArray.join('</li><li>');
-      this.noteList = htmlString.concat(notesArray, htmlEnd);
     }
-    this.noteList;
-
+      return htmlString;
   };
+
   exports.NoteListView = NoteListView;
 
 })(this)

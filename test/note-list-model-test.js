@@ -1,34 +1,33 @@
 (function(exports){
 
   // Stores an array of note models.
-  function testNoteListModelContainsEmptyArray(){
+  function testNoteListContainsEmptyArray(){
 
-    var noteListModel = new NoteListModel();
-    assert.isTrue(noteListModel.notes.length === 0);
+    var noteList = new NoteList();
+    assert.isTrue(noteList.notes.length === 0, 'NoteList contains empty array');
   }
-  testNoteListModelContainsEmptyArray();
+  testNoteListContainsEmptyArray();
 
   // Has a method that will return all the note models stored in the array.
-  function testNoteListModelReturnsAllNoteModelsInArray(){
+  function testNoteListReturnsAllNoteListsInArray(){
 
-    var noteListModel = new NoteListModel();
-    var arr = noteListModel.notes;
+    var noteList = new NoteList();
+    var arr = noteList.notes;
 
-    assert.isTrue(noteListModel.getNotes.length === arr.length);
+    assert.isTrue(noteList.getNotes.length === arr.length, 'NoteList returns all NoteLists in array');
   }
-  testNoteListModelReturnsAllNoteModelsInArray();
+  testNoteListReturnsAllNoteListsInArray();
 
   // Has a method that creates and stores a new single note model.
   // This function takes as an argument a string that will be the value of the
   // text property of the note e.g. "Favourite drink: seltzer".
 
-  function testNoteListModelStoresSingleNoteModel(){
+  function testNoteListStoresSingleNoteModel(){
 
-    var noteListModel = new NoteListModel();
-    noteListModel.createNote('Favourite drink: seltzer')
-
-    assert.isTrue(noteListModel.notes[0].text === 'Favourite drink: seltzer');
+    var noteList = new NoteList();
+    noteList.createNote('Favourite drink: seltzer')
+    assert.isTrue(noteList.notes[0].text === 'Favourite drink: seltzer', 'NoteList stores single NoteModel');
   }
-  testNoteListModelStoresSingleNoteModel();
+  testNoteListStoresSingleNoteModel();
 
 })(this)

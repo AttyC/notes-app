@@ -1,54 +1,45 @@
-// Has a method that, when called,
-// returns a string of HTML
-// that represents the note list model.
-//
-// For example: <ul><li><div>Favourite food: pesto</div></li><li><div>Favourite drink: seltzer</div></li></ul>.
-// Handles a note list model that has no notes, one note or several notes.
-
 (function(exports){
-  
-  function testNoteListViewHasNoteListModel(){
-    var model = new NoteListModel();
-    var noteListView = new NoteListView(model);
-    noteListView.model.createNote('This is an HTML test');
-    noteListView.model.createNote('Blah test');
-    noteListView.model.createNote('Sweet test');
-    noteListView.createHTML(model);
 
-    assert.isTrue(noteListView.model.notes[2].text == "Sweet test");
+  function testNoteListViewHasNoteList(){
+    var noteList = new NoteList();
+    var noteListView = new NoteListView(noteList);
+    noteListView.noteList.createNote('This is an HTML test');
+    noteListView.noteList.createNote('Blah test');
+    noteListView.noteList.createNote('Sweet test');
+    noteListView.createHTML(noteList);
+
+    assert.isTrue(noteListView.noteList.notes[2].text == "Sweet test", 'Note List View has NoteList');
 
   }
-  testNoteListViewHasNoteListModel();
+  testNoteListViewHasNoteList();
 
   function testNoteListViewReturnsHtmlStringWithMultipleNotes(){
-    var model = new NoteListModel();
-    var noteListView = new NoteListView(model);
-    noteListView.model.createNote('This is an HTML test');
-    noteListView.model.createNote('Blah test');
-    noteListView.model.createNote('Sweet test');
-    noteListView.createHTML(model);
+    var noteList = new NoteList();
+    var noteListView = new NoteListView(noteList);
+    noteListView.noteList.createNote('This is an HTML test');
+    noteListView.noteList.createNote('Blah test');
+    noteListView.noteList.createNote('Sweet test');
 
-    assert.isTrue(noteListView.noteList === ('<ul><li>This is an HTML test</li><li>Blah test</li><li>Sweet test</li></ul>'));
+    assert.isTrue(noteListView.createHTML() === ('<ul><li>This is an HTML test</li><li>Blah test</li><li>Sweet test</li></ul>'), 'NoteListView returns Html string with multiple notes');
   }
   testNoteListViewReturnsHtmlStringWithMultipleNotes();
 
-  function testNoteListViewWithZeroNotesDoesNotReturnsHtmlString(){
-    var model = new NoteListModel();
-    var noteListView = new NoteListView(model);
+  function testNoteListViewWithZeroNotesDoesNotReturnHtmlString(){
+    var noteList = new NoteList();
+    var noteListView = new NoteListView(noteList);
 
-    noteListView.createHTML(model);
-    assert.isTrue(noteListView.noteList.length === 0);
+    ;
+    assert.isTrue(noteListView.createHTML() === '', 'NoteListView with Zero Notes does not return Html string');
 
   }
-  testNoteListViewWithZeroNotesDoesNotReturnsHtmlString();
+  testNoteListViewWithZeroNotesDoesNotReturnHtmlString();
 
   function testNoteListViewReturnsHtmlStringWithOneNote(){
-    var model = new NoteListModel();
-    var noteListView = new NoteListView(model);
-    noteListView.model.createNote('This is an HTML test');
-    noteListView.createHTML(model);
+    var noteList = new NoteList();
+    var noteListView = new NoteListView(noteList);
+    noteListView.noteList.createNote('This is an HTML test');
 
-    assert.isTrue(noteListView.noteList === ('<ul><li>This is an HTML test</li></ul>'));
+    assert.isTrue(noteListView.createHTML() === ('<ul><li>This is an HTML test</li></ul>'), 'NoteListView returns Html string with one Note');
 
   }
   testNoteListViewReturnsHtmlStringWithOneNote();
