@@ -1,26 +1,38 @@
-(function(exports){
+// The note controller has a method that gets HTML from the
+// note list view and inserts it into the app element.
+
+(function(){
+
   // Stores an array of note models.
   function testNoteControllerHasNoteList(){
-    var noteList = new NoteList();
-    var noteView = new NoteListView(noteList);
-    var noteController = new NoteController(noteList, noteView);
+
+    var mockNoteListView = {
+     createHTML: function() { return "<ul><li><Favourite drink: seltzer</li></ul>" }
+    };
+    var noteController = new NoteController(mockNoteListView);
     assert.isTrue(noteController.noteList !== null, 'NoteController has NoteList');
   }
   testNoteControllerHasNoteList();
 
-
-
   function testCreateHtml(){
     var mockElement = {
-      innerHtml : "hello"
+      innerHTML : ""
     };
 
-    var noteList = new NoteList();
-    noteList.createNote('Take dog to vet');
-    var noteView = new NoteListView(noteList);
-    var noteController = new NoteController(noteList, noteView, mockElement);
+    var mockNoteListView = {
+     createHTML: function() { return "<ul><li><Take dog to vet</li></ul>" }
+    };
+    var noteController = new NoteController(mockNoteListView, mockElement);
     noteController.insertHtml();
-    assert.isTrue( target.innerHTML === '<ul><li>Take dog to vet</li></ul>', 'createHtml returns correct value');
+    assert.isTrue( mockElement.innerHTML == "<ul><li>Take dog to vet</li></ul>", 'createHtml returns correct value');
   }
   testCreateHtml();
+
+
+
 })(this)
+  //
+  //
+  // var mockElement = {
+  //   innerHTML : null
+  // }

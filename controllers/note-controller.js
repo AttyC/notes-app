@@ -1,12 +1,12 @@
 (function(exports){
-  function NoteController(noteList, noteView, HTMLelement){
-    this.noteList = noteList;
-    this.noteView = noteView;
-    this.HTMLelement = HTMLelement;
+
+  function NoteController(noteListView, element = document.getElementById('app')){
+    this.noteView = noteListView;
+    this.element = element;
   }
 
-  NoteController.prototype.insertHtml = function() {
-    this.HTMLelement.innerHTML = this.noteView.createHTML();
+  NoteController.prototype.insertHtml = function () {
+    this.element.innerHTML = this.noteView.createHTML();
   };
 
   exports.NoteController = NoteController;
