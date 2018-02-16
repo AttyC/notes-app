@@ -3,7 +3,7 @@ var assert = {
     if (!assertionToCheck) {
       throw new Error("Assertion failed: " + name + " " + assertionToCheck);
     } else {
-      console.log('Assertion passed: ' + name);
+      console.log('Test Passed: ' + name);
     }
   }
 }

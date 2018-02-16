@@ -3,7 +3,7 @@
   function testNoteListContainsEmptyArray(){
 
     var noteList = new NoteList();
-    assert.isTrue(noteList.notes.length === 0, 'NoteList contains empty array');
+    assert.isTrue(noteList.notes.length === 0, 'Note list contains empty array');
   }
   testNoteListContainsEmptyArray();
 
@@ -11,8 +11,7 @@
 
     var noteList = new NoteList();
     var arr = noteList.notes;
-
-    assert.isTrue(noteList.getNotes.length === arr.length, 'NoteList returns all NoteLists in array');
+    assert.isTrue(noteList.getNotes.length === arr.length, 'Note list returns all NoteLists in array');
   }
   testNoteListReturnsAllNoteListsInArray();
 
