@@ -14,8 +14,15 @@
   };
 
   NoteList.prototype.storeNote = function(note){
-    this.notes.push(note)
+    this.notes.push(note);
+    this.addID(note);
   }
+
+  NoteList.prototype.addID = function (note) {
+    var index = this.notes.indexOf(note);
+    this.notes[index].id = index;
+    note.getID(note);
+  };
 
   exports.NoteList = NoteList;
 

@@ -24,4 +24,12 @@
   }
   testNoteListStoresSingleNoteModel();
 
+  function testCreateNoteReturnsNoteID(){
+
+    var noteList = new NoteList();
+    noteList.createNote('Favourite drink: hot milk with cinnamon')
+    assert.isTrue(noteList.notes[0].id === 0, 'Note list createNote returns note ID');
+  }
+  testCreateNoteReturnsNoteID();
+
 })(this)
