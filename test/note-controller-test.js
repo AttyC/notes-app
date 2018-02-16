@@ -1,6 +1,3 @@
-// The note controller has a method that gets HTML from the
-// note list view and inserts it into the app element.
-
 (function(){
 
   // Stores an array of note models.
