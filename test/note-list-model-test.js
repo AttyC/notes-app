@@ -25,8 +25,8 @@
   function testNoteListStoresSingleNoteModel(){
 
     var noteList = new NoteList();
-    noteList.createNote('Favourite drink: seltzer')
-    assert.isTrue(noteList.notes[0].text === 'Favourite drink: seltzer', 'NoteList stores single NoteModel');
+    noteList.createNote('Favourite drink: sweet cold Milo Ice')
+    assert.isTrue(noteList.notes[0].text === 'Favourite drink: sweet cold Milo Ice', 'NoteList stores single NoteModel');
   }
   testNoteListStoresSingleNoteModel();
 

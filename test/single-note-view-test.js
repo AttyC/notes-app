@@ -1,11 +1,6 @@
-
-// The single note view has a method that, when called,
-// returns a string of HTML that represents the note model.
-// For example: <div>Favourite drink: seltzer</div>.
 (function(){
 
   function testSingleNoteViewContainsNoteModel(){
-    debugger;
     var mockNote = {
       text : 'test note model - this is as much fun as cheese'
     }
