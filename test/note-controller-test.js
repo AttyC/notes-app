@@ -4,7 +4,7 @@
   function testNoteControllerHasNoteList(){
 
     var mockNoteListView = {
-     createHTML: function() { return "<ul><li><Favourite drink: seltzer</li></ul>" }
+     createHTML: function() { return "<ul><li>Favourite drink: sweet cold Milo Ice</li></ul>" }
     };
     var noteController = new NoteController(mockNoteListView);
     assert.isTrue(noteController.noteList !== null, 'NoteController has NoteList');
@@ -20,16 +20,10 @@
      createHTML: function() { return "<ul><li><Take dog to vet</li></ul>" }
     };
     var noteController = new NoteController(mockNoteListView, mockElement);
+
     noteController.insertHtml();
-    assert.isTrue( mockElement.innerHTML == "<ul><li>Take dog to vet</li></ul>", 'createHtml returns correct value');
+    assert.isTrue( mockElement.innerHTML === "<ul><li>Take dog to vet</li></ul>", 'createHtml returns correct value');
   }
   testCreateHtml();
 
-
-
 })(this)
-  //
-  //
-  // var mockElement = {
-  //   innerHTML : null
-  // }

@@ -9,13 +9,14 @@
   }
   testSingleNoteViewContainsNoteModel();
 
-  function testSingleNoteViewReturnsNoteText() {
+  function testSingleNoteViewReturnsNoteText20Chars() {
+
     var mockNote = {
-      text : 'test note model - this is as much fun as rollercoasters'
+      text : "rollercoasters happen to be the fun way to travel"
     }
     var singleNoteView = new SingleNoteView(mockNote);
-    assert.isTrue(singleNoteView.createSingleNoteHtml() === "test note model - this is as much fun as rollercoasters", 'Single Note View returns Note Text');
+    assert.isTrue(singleNoteView.createSingleNoteHtml() === "rollercoasters happ", 'Single Note View returns first 20 chars of Note text');
   }
-  testSingleNoteViewReturnsNoteText();
+  testSingleNoteViewReturnsNoteText20Chars();
 
 })(this)

@@ -1,6 +1,5 @@
 (function(exports){
 
-  // Stores an array of note models.
   function testNoteListContainsEmptyArray(){
 
     var noteList = new NoteList();
@@ -8,7 +7,6 @@
   }
   testNoteListContainsEmptyArray();
 
-  // Has a method that will return all the note models stored in the array.
   function testNoteListReturnsAllNoteListsInArray(){
 
     var noteList = new NoteList();
@@ -18,15 +16,11 @@
   }
   testNoteListReturnsAllNoteListsInArray();
 
-  // Has a method that creates and stores a new single note model.
-  // This function takes as an argument a string that will be the value of the
-  // text property of the note e.g. "Favourite drink: seltzer".
-
   function testNoteListStoresSingleNoteModel(){
 
     var noteList = new NoteList();
-    noteList.createNote('Favourite drink: sweet cold Milo Ice')
-    assert.isTrue(noteList.notes[0].text === 'Favourite drink: sweet cold Milo Ice', 'NoteList stores single NoteModel');
+    noteList.createNote('Favourite drink: hot milk with cinnamon')
+    assert.isTrue(noteList.notes[0].text === 'Favourite drink: hot milk with cinnamon', 'NoteList stores single NoteModel');
   }
   testNoteListStoresSingleNoteModel();
 

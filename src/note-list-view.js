@@ -10,7 +10,7 @@
     if( this.noteList.notes.length > 0 ) {
       htmlString = '<ul>';
       this.noteList.notes.map(function(note){
-        htmlString += '<li>' + note.text + '</li>';
+        htmlString += `<li>${note.text.slice(0,19)}</li>`;
       });
       htmlString += '</ul>';
     }

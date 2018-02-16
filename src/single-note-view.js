@@ -5,7 +5,7 @@
   }
 
   SingleNoteView.prototype.createSingleNoteHtml = function () {
-    return this.note.text;
+    return this.note.text.slice(0,19);
   };
 
   exports.SingleNoteView = SingleNoteView;
