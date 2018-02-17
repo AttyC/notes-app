@@ -7,8 +7,7 @@
 
   NoteController.prototype.insertHtml = function () {
     this.element.innerHTML = this.noteView.createHTML();
-  };
-
+  }
   exports.NoteController = NoteController;
 
 })(this)
