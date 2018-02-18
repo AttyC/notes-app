@@ -1,4 +1,4 @@
-(function(exports){
+(function(){
 
   function testNoteListContainsEmptyArray(){
 
@@ -31,4 +31,4 @@
   }
   testCreateNoteReturnsNoteID();
 
-})(this)
+})()

@@ -19,4 +19,4 @@
   }
   testSingleNoteViewReturnsNoteText20Chars();
 
-})(this)
+})()

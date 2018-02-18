@@ -1,4 +1,4 @@
-(function(exports) {
+(function() {
 
   function testNoteContainsText() {
     var note =  new Note('My favourite language is JavaScript');
@@ -6,4 +6,4 @@
   }
   testNoteContainsText();
 
-})(this);
+})();

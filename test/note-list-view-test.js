@@ -1,4 +1,4 @@
-(function(exports){
+(function(){
 
   function testNoteListViewHasNoteList(){
     var noteList = new NoteList();
@@ -43,5 +43,4 @@
   }
   testNoteListViewWithZeroNotesDoesNotReturnHtmlString();
 
-
-})(this)
+})()

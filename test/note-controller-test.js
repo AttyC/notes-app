@@ -1,6 +1,5 @@
 (function(){
 
-  // Stores an array of note models.
   function testNoteControllerHasNoteList(){
 
     var mockNoteListView = {
